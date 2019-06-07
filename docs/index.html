@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Google Map API</title>
+    <style>
+      #map {
+        width: 100%;
+        height: 400px;
+      }
+
+      .gm-style .gm-style-iw-c {
+        color: #666;
+        font-size: 15px;
+      }
+
+      #bodyContent p {
+        margin: 0;
+      }
+
+      #bodyContent p a {
+        color: #02afb5;
+      }
+
+      .firstHeading {
+        color: #f1938b;
+        margin: 0 0 0.25rem 0;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script src="./main.js"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKjNl5hYoUKOdHtqAPWkjOiesg1qMrNUE&callback=initMap"
+      async
+      defer
+    ></script>
+  </body>
+</html>
