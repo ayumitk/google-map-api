@@ -1,0 +1,14 @@
+{
+  "extends": "eslint-config-airbnb-base",
+  "parserOptions": {
+    "ecmaVersion": 6
+  },
+  "env": {
+    "node": true,
+    "browser": true,
+    "mocha": true
+  },
+  "rules": {
+    "linebreak-style": 0
+  }
+}

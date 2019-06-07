@@ -1,201 +1,203 @@
-function initMap() {
-  var myLatLng = { lat: 33.236677, lng: 131.606414 };
+/* global google */ // for disable ESLint
 
-  var themeSilver = [
+function initMap() {
+  const myLatLng = { lat: 33.236677, lng: 131.606414 };
+
+  const themeSilver = [
     {
-      elementType: "geometry",
+      elementType: 'geometry',
       stylers: [
         {
-          color: "#f5f5f5"
-        }
-      ]
+          color: '#f5f5f5',
+        },
+      ],
     },
     {
-      elementType: "labels.icon",
+      elementType: 'labels.icon',
       stylers: [
         {
-          visibility: "off"
-        }
-      ]
+          visibility: 'off',
+        },
+      ],
     },
     {
-      elementType: "labels.text.fill",
+      elementType: 'labels.text.fill',
       stylers: [
         {
-          color: "#616161"
-        }
-      ]
+          color: '#616161',
+        },
+      ],
     },
     {
-      elementType: "labels.text.stroke",
+      elementType: 'labels.text.stroke',
       stylers: [
         {
-          color: "#f5f5f5"
-        }
-      ]
+          color: '#f5f5f5',
+        },
+      ],
     },
     {
-      featureType: "administrative.land_parcel",
-      elementType: "labels.text.fill",
+      featureType: 'administrative.land_parcel',
+      elementType: 'labels.text.fill',
       stylers: [
         {
-          color: "#bdbdbd"
-        }
-      ]
+          color: '#bdbdbd',
+        },
+      ],
     },
     {
-      featureType: "poi",
-      elementType: "geometry",
+      featureType: 'poi',
+      elementType: 'geometry',
       stylers: [
         {
-          color: "#eeeeee"
-        }
-      ]
+          color: '#eeeeee',
+        },
+      ],
     },
     {
-      featureType: "poi",
-      elementType: "labels.text.fill",
+      featureType: 'poi',
+      elementType: 'labels.text.fill',
       stylers: [
         {
-          color: "#757575"
-        }
-      ]
+          color: '#757575',
+        },
+      ],
     },
     {
-      featureType: "poi.park",
-      elementType: "geometry",
+      featureType: 'poi.park',
+      elementType: 'geometry',
       stylers: [
         {
-          color: "#e5e5e5"
-        }
-      ]
+          color: '#e5e5e5',
+        },
+      ],
     },
     {
-      featureType: "poi.park",
-      elementType: "labels.text.fill",
+      featureType: 'poi.park',
+      elementType: 'labels.text.fill',
       stylers: [
         {
-          color: "#9e9e9e"
-        }
-      ]
+          color: '#9e9e9e',
+        },
+      ],
     },
     {
-      featureType: "road",
-      elementType: "geometry",
+      featureType: 'road',
+      elementType: 'geometry',
       stylers: [
         {
-          color: "#ffffff"
-        }
-      ]
+          color: '#ffffff',
+        },
+      ],
     },
     {
-      featureType: "road.arterial",
-      elementType: "labels.text.fill",
+      featureType: 'road.arterial',
+      elementType: 'labels.text.fill',
       stylers: [
         {
-          color: "#757575"
-        }
-      ]
+          color: '#757575',
+        },
+      ],
     },
     {
-      featureType: "road.highway",
-      elementType: "geometry",
+      featureType: 'road.highway',
+      elementType: 'geometry',
       stylers: [
         {
-          color: "#dadada"
-        }
-      ]
+          color: '#dadada',
+        },
+      ],
     },
     {
-      featureType: "road.highway",
-      elementType: "labels.text.fill",
+      featureType: 'road.highway',
+      elementType: 'labels.text.fill',
       stylers: [
         {
-          color: "#616161"
-        }
-      ]
+          color: '#616161',
+        },
+      ],
     },
     {
-      featureType: "road.local",
-      elementType: "labels.text.fill",
+      featureType: 'road.local',
+      elementType: 'labels.text.fill',
       stylers: [
         {
-          color: "#9e9e9e"
-        }
-      ]
+          color: '#9e9e9e',
+        },
+      ],
     },
     {
-      featureType: "transit.line",
-      elementType: "geometry",
+      featureType: 'transit.line',
+      elementType: 'geometry',
       stylers: [
         {
-          color: "#e5e5e5"
-        }
-      ]
+          color: '#e5e5e5',
+        },
+      ],
     },
     {
-      featureType: "transit.station",
-      elementType: "geometry",
+      featureType: 'transit.station',
+      elementType: 'geometry',
       stylers: [
         {
-          color: "#eeeeee"
-        }
-      ]
+          color: '#eeeeee',
+        },
+      ],
     },
     {
-      featureType: "water",
-      elementType: "geometry",
+      featureType: 'water',
+      elementType: 'geometry',
       stylers: [
         {
-          color: "#c9c9c9"
-        }
-      ]
+          color: '#c9c9c9',
+        },
+      ],
     },
     {
-      featureType: "water",
-      elementType: "labels.text.fill",
+      featureType: 'water',
+      elementType: 'labels.text.fill',
       stylers: [
         {
-          color: "#9e9e9e"
-        }
-      ]
-    }
+          color: '#9e9e9e',
+        },
+      ],
+    },
   ];
 
-  var marker = new google.maps.Marker({
-    position: myLatLng,
-    map: map,
-    icon: {
-      url: "location.svg",
-      scaledSize: new google.maps.Size(60, 60)
-    },
-    title: "株式会社petRibbon"
+  const map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 18,
+    center: myLatLng,
+    styles: themeSilver,
+    scrollwheel: false,
   });
 
-  var infowindow = new google.maps.InfoWindow({
+  const marker = new google.maps.Marker({
+    position: myLatLng,
+    map,
+    icon: {
+      url: 'location.svg',
+      scaledSize: new google.maps.Size(60, 60),
+    },
+    title: '株式会社petRibbon',
+  });
+
+  const infoWindow = new google.maps.InfoWindow({
     content: `
       <div id="content">
         <div id="siteNotice"></div>
         <h1 id="firstHeading" class="firstHeading">株式会社petRibbon</h1>
         <div id="bodyContent">
-          <p>〒870-0035　大分県大分市中央町2丁目5-24</p>
+          <p>〒870-0035 大分県大分市中央町2丁目5-24</p>
           <p><a href="https://goo.gl/maps/MDXLFhyXuo4yFn1XA" target="_blank">Google Mapで見る &#187;</a></p>
         </div>
       </div>
-    `
-  });
-
-  var map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 18,
-    center: myLatLng,
-    styles: themeSilver,
-    scrollwheel: false
+    `,
   });
 
   marker.setMap(map);
 
-  marker.addListener("click", function() {
-    infowindow.open(map, marker);
+  marker.addListener('click', () => {
+    infoWindow.open(map, marker);
   });
 }
 
